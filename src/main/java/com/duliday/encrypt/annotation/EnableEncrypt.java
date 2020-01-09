@@ -1,4 +1,4 @@
-package cn.coding.xiaofeng.annotation;
+package com.duliday.encrypt.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

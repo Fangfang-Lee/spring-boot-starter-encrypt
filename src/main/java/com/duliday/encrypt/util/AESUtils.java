@@ -1,6 +1,4 @@
-package cn.coding.xiaofeng.util;
-
-import static org.springframework.cache.interceptor.SimpleKeyGenerator.generateKey;
+package com.duliday.encrypt.util;
 
 import com.sun.org.apache.xml.internal.security.exceptions.Base64DecodingException;
 import com.sun.org.apache.xml.internal.security.utils.Base64;

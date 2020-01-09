@@ -1,4 +1,4 @@
-package cn.coding.xiaofeng.config;
+package com.duliday.encrypt.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

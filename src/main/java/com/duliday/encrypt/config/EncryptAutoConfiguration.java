@@ -1,7 +1,7 @@
-package cn.coding.xiaofeng.config;
+package com.duliday.encrypt.config;
 
-import cn.coding.xiaofeng.advice.EncryptRequestBodyAdvice;
-import cn.coding.xiaofeng.advice.EncryptResponseBodyAdvice;
+import com.duliday.encrypt.advice.EncryptRequestBodyAdvice;
+import com.duliday.encrypt.advice.EncryptResponseBodyAdvice;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

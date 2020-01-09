@@ -1,8 +1,8 @@
-package cn.coding.xiaofeng.advice;
+package com.duliday.encrypt.advice;
 
-import cn.coding.xiaofeng.annotation.Decrypt;
-import cn.coding.xiaofeng.config.EncryptProperties;
-import cn.coding.xiaofeng.util.AESUtils;
+import com.duliday.encrypt.annotation.Decrypt;
+import com.duliday.encrypt.config.EncryptProperties;
+import com.duliday.encrypt.util.AESUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
