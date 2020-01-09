@@ -1,7 +1,5 @@
 package com.duliday.encrypt.util;
 
-import com.sun.org.apache.xml.internal.security.exceptions.Base64DecodingException;
-import com.sun.org.apache.xml.internal.security.utils.Base64;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -11,6 +9,7 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
+import org.apache.commons.codec.binary.Base64;
 
 /**
  * @Date 2020/1/8 下午7:38
@@ -28,16 +27,16 @@ public class AESUtils {
         keyGenerator.init(128);
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(encryptKey.getBytes(), "AES"));
-        return Base64.encode(cipher.doFinal(encryptStr.getBytes("utf-8")));
+        return Base64.encodeBase64String(cipher.doFinal(encryptStr.getBytes("utf-8")));
     }
 
     public static String decrypt(String decryptStr, String decryptKey)
-        throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, UnsupportedEncodingException, BadPaddingException, IllegalBlockSizeException, Base64DecodingException {
+        throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
         keyGenerator.init(128);
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec(decryptKey.getBytes(), "AES"));
-        return new String(cipher.doFinal(Base64.decode(decryptStr.getBytes())));
+        return new String(cipher.doFinal(Base64.decodeBase64(decryptStr.getBytes())));
     }
 
     public static void main(String[] args) throws Exception {
